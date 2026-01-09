@@ -1,0 +1,35 @@
+# Agent配置
+agent:
+  model_name: "gpt-4"
+  temperature: 0.7
+  max_tokens: 2000
+
+# RAG配置
+rag:
+  chunk_size: 1000
+  chunk_overlap: 200
+  embedding_model: "text-embedding-ada-002"
+  vector_store_type: "chroma"  # chroma 或 faiss
+  collection_name: "marketing_solutions"
+
+# 知识库配置
+knowledge_base:
+  base_path: "./knowledge_base"
+  supported_formats:
+    - "pdf"
+    - "pptx"
+    - "docx"
+    - "txt"
+    - "md"
+
+# 第三方API配置
+external_api:
+  base_url: "https://api.example.com"
+  api_key: "${API_KEY}"  # 从环境变量读取
+  timeout: 30
+
+# 飞书配置（如果需要）
+feishu:
+  app_id: "${FEISHU_APP_ID}"
+  app_secret: "${FEISHU_APP_SECRET}"
+  base_url: "https://open.feishu.cn"
